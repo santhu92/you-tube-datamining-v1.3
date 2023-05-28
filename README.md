@@ -31,7 +31,7 @@ Then we call channel, video, playlist, comment api to collect the below data.
         2: My Sql Installation steps : https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ , SQL Download package =                 https://dev.mysql.com/downloads/installer/ 
         3:Installing Mongo DB - https://www.mongodb.com/docs/manual/installation/ , Mongo DB Download : https://www.mongodb.com/try/download/community
         4:unzip the package and open app.py and config.py
- # app.py
+   # app.py
         from sqlalchemy import create_engine
         from pymongo import MongoClient
         client = MongoClient("mongodb://<hostname>:<port>")   #### please replace the db connection url as per your mongo db installed            For Example ('mongodb://localhost:27017')
@@ -40,8 +40,12 @@ Then we call channel, video, playlist, comment api to collect the below data.
         pw=   #### replace it with your password for example pw="password123"
         engine1 = create_engine("mysql+pymysql://{user}:{pw}@<hostname>".format(user="xxxxx", pw="xxxxx123"))   #### replace hostname and username as per your installation 
         engine = create_engine("mysql+pymysql://{user}:{pw}@<hostname>/{db}".format(user="xxxxx", pw="xxxxx123", db = database)) #### replace hostname and username as per your installation 
- # config.py 
+   # config.py 
         Update the api_key in this file. 
         api_key1 =   ##### please add you api_key here for example api_key = 'AIw5MWSi8H59NWwBaPAafIN17BWTmXrLzaSyDnm'
+   # Run Application 
+        Go to the path in command line where your application package is downloaded(you tube datamining v1.3) and run below command.
+        <path to python_package>python YTB_app.py   #### update the path of you python installed in this command or copy the downloaded "you tube datamining v1.3" to the path where python is installed and this command cd <python_installed_path>/<path_to_YTB_app.py>/python YTB_app.py
+       
  
 
