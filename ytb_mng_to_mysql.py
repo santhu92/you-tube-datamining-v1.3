@@ -113,7 +113,7 @@ if database not in existing_databases:
     engine.execute("create table Channel (channel_id VARCHAR(255) NOT NULL PRIMARY KEY, channel_name VARCHAR(255) NOT NULL, channel_type VARCHAR(255) NOT NULL, channel_views int(10) NOT NULL, channel_description VARCHAR(255) NOT NULL, channel_status VARCHAR(255));")
     engine.execute("create table Playlist (playlist_id VARCHAR(255) NOT NULL PRIMARY KEY, channel_id VARCHAR(255) NOT NULL, FOREIGN KEY(channel_id) REFERENCES Channel(channel_id), playlist_name VARCHAR(255) NOT NULL);")
     engine.execute("create table video (video_id VARCHAR(255) NOT NULL PRIMARY KEY, playlist_id VARCHAR(255) NOT NULL, FOREIGN KEY(playlist_id) REFERENCES Playlist(playlist_id), video_name VARCHAR(255) NOT NULL, video_description TEXT NOT NULL, published_date DATETIME, view_count int(10), like_count int(10), dislike_count int(10), favorite_count int(10), comment_count int(10), duration float(10), thumbnail VARCHAR(255), caption_status VARCHAR(255));")
-    engine.execute("create table Comment (comment_id VARCHAR(255) NOT NULL PRIMARY KEY, video_id VARCHAR(255) NOT NULL, FOREIGN KEY(video_id) REFERENCES Video(video_id), comment_text TEXT , comment_author VARCHAR(255) NOT NULL, comment_published_date DATETIME NOT NULL, channel_description VARCHAR(255) NOT NULL, channel_status VARCHAR(255));")
+    engine.execute("create table Comment (comment_id VARCHAR(255) NOT NULL PRIMARY KEY, video_id VARCHAR(255) NOT NULL, FOREIGN KEY(video_id) REFERENCES Video(video_id), comment_text TEXT , comment_author VARCHAR(255) NOT NULL, comment_published_date DATETIME NOT NULL);")
 
     channel_df.to_sql('channel', con = engine, if_exists = 'append', index= False)
     playlist_df.to_sql('playlist', con = engine, if_exists = 'append', index= False)
