@@ -104,8 +104,7 @@ if button4:
         st.write(Average_videos_duration_of_Each_channel)
 try:
     drop_data_list = k.split(",")
-    drop_data = st.sidebar.selectbox('select the channel to drop, (drop_data_list))
-
+    drop_data = st.sidebar.selectbox('select the channel to drop, (drop_data_list))                                  
     drop_button = st.sidebar.button("drop button")
     if drop_button:
         engine.execute("SET FOREIGN_KEY_CHECKS=0;")
