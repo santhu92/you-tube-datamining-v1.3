@@ -99,7 +99,7 @@ if button4:
         st.write(video_comment_count)
 try:
     drop_data_list = k.split(",")
-    drop_data = st.sidebar.selectbox('select the harvested channel, in which you want to see raw data', (drop_data_list))
+    drop_data = st.sidebar.selectbox('select the channel to drop, (drop_data_list))
 
     drop_button = st.sidebar.button("drop button")
     if drop_button:
