@@ -7,7 +7,7 @@ This file is created to keep the DB related connection details( fill with your d
 # config.py 
 This file holds the api_key (you have to create your api key in google develope console and update it here)
 # YTB_app.py 
-This file is to invoke the streamlit dash board api (gui). once above steps are completed then you can proceed with this.  i beleive you already installed mongoDB and mysql in you machine.
+This file will help you install the required library on its own and invoke the streamlit dash board api (gui). once above steps are completed then you can proceed with this.  i beleive you already installed mongoDB and mysql in you machine.
 # YOUTUBE_STREAMLIT_app.py 
 This will invoke the stream lit GUI for our project. this project created for harvesting you tube channel data by providing the channel id in the stream lit app , we can provide multiple channel at a time to harvest the details.
 once the data is harvested of the particular channel, it will move the data to mongo db (harvested data will be in semi-structured dict format), you can use the side bar to upload the nosql data from mongo data to the SQL 
