@@ -45,7 +45,8 @@ Then we call channel, video, playlist, comment api to collect the below data.
         api_key1 =   ##### please add you api_key here for example api_key = 'AIw5MWSi8H59NWwBaPAafIN17BWTmXrLzaSyDnm'
    # Run Application 
         Go to the path in command line where your application package is downloaded(you tube datamining v1.3) and run below command.
-        <path to python_package>python YTB_app.py   #### update the path of you python installed in this command or copy the downloaded "you tube datamining v1.3" to the path where python is installed and this command cd <python_installed_path>/<path_to_YTB_app.py>/python YTB_app.py
+        <path to python_package>python YTB_app.py   #### update the path of your python installed in your machine and run this command or copy the downloaded "you tube datamining v1.3" to the path where python is installed and run this command "cd <python_installed_path>/<path_to_YTB_app.py>/; python YTB_app.py;
+        
        
  
 
