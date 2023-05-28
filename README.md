@@ -27,10 +27,10 @@ Then we call channel, video, playlist, comment api to collect the below data.
  This will convert the dictionary format data to the structured format and move the data to the SQL server .
  
  # Steps to Install it in your local/cloud machine:
- 1: down load the complete repo to your machine.
- 2: My Sql Installation steps : https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ , SQL Download package =                 https://dev.mysql.com/downloads/installer/ 
- 3:Installing Mongo DB - https://www.mongodb.com/docs/manual/installation/ , Mongo DB Download : https://www.mongodb.com/try/download/community
- 4:unzip the package and open app.py and config.py
+        1: down load the complete repo to your machine.
+        2: My Sql Installation steps : https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ , SQL Download package =                 https://dev.mysql.com/downloads/installer/ 
+        3:Installing Mongo DB - https://www.mongodb.com/docs/manual/installation/ , Mongo DB Download : https://www.mongodb.com/try/download/community
+        4:unzip the package and open app.py and config.py
  # app.py
         from sqlalchemy import create_engine
         from pymongo import MongoClient
@@ -40,6 +40,8 @@ Then we call channel, video, playlist, comment api to collect the below data.
         pw=   #### replace it with your password for example pw="password123"
         engine1 = create_engine("mysql+pymysql://{user}:{pw}@<hostname>".format(user="xxxxx", pw="xxxxx123"))   #### replace hostname and username as per your installation 
         engine = create_engine("mysql+pymysql://{user}:{pw}@<hostname>/{db}".format(user="xxxxx", pw="xxxxx123", db = database)) #### replace hostname and username as per your installation 
- 
+ # config.py 
+        Update the api_key in this file. 
+        api_key1 =   ##### please add you api_key here for example api_key = 'AIw5MWSi8H59NWwBaPAafIN17BWTmXrLzaSyDnm'
  
 
