@@ -132,6 +132,7 @@ if database not in existing_databases:
     engine.execute("CREATE VIEW Channel_that_published_video_in_year2022 AS SELECT channel_name FROM video, channel, playlist WHERE video.playlist_id = playlist.playlist_id AND channel.channel_id = playlist.channel_id AND YEAR(published_date)  = 2022;")
     engine.execute("CREATE VIEW More_comments AS select channel_name, comment_count, video_name from video, channel, playlist WHERE video.playlist_id = playlist.playlist_id AND channel.channel_id = playlist.channel_id ORDER BY comment_count DESC LIMIT 10;")
     engine.execute("CREATE VIEW channel_id_info AS select channel_name, channel.channel_id, count(video_id) from video, channel, playlist WHERE video.playlist_id = playlist.playlist_id AND channel.channel_id = playlist.channel_id GROUP BY channel_name;")
+    engine.execute("CREATE VIEW Average_videos_duration_of_Each_channel AS select channel_name, AVG(duration)from video, channel, playlist WHERE video.playlist_id = playlist.playlist_id AND channel.channel_id = playlist.channel_id GROUP BY channel_name;")
 else:
     engine.execute("SET FOREIGN_KEY_CHECKS=0;")
     engine.execute("SET @@global.sql_mode= '';")
