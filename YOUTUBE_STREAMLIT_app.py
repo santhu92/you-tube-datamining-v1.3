@@ -69,6 +69,9 @@ try:
     video_comment_count = pd.read_sql_query("SELECT comment_count, video_name from video;", con=engine)
 
     channel_id_info = pd.read_sql_query("SELECT * from channel_id_info;", con=engine)
+    
+    Average_videos_duration_of_Each_channel = pd.read_sql_query("SELECT * from Average_videos_duration_of_Each_channel;", con=engine)
+    
 except BaseException as e:
     pass
 
@@ -76,7 +79,7 @@ except BaseException as e:
 option = st.sidebar.selectbox('Search By', (
     'More_comments', 'Channel_that_published_video_in_year2022s', 'most_liked_videos',
     'channel', 'videos_basic_info', 'Least_Watched_videos', 'Top_videos',
-    'video_comment_count'))
+    'video_comment_count','Average_videos_duration_of_Each_channel'))
 button4 = st.sidebar.button("Click to proceed", key="button5")
 if button4:
     if option == 'More_comments':
@@ -97,6 +100,8 @@ if button4:
         st.write(Top_videos)
     elif option == 'video_comment_count':
         st.write(video_comment_count)
+    elif option == 'Average_videos_duration_of_Each_channel':
+        st.write(Average_videos_duration_of_Each_channel)
 try:
     drop_data_list = k.split(",")
     drop_data = st.sidebar.selectbox('select the channel to drop, (drop_data_list))
